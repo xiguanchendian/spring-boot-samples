@@ -5,6 +5,9 @@ import com.google.common.util.concurrent.RateLimiter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * RateLimiter 谷歌下的限流工具，采用的是令牌桶算法
+ */
 public class RateLimiterDemo {
     public static void main(String[] args) {
         String start = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

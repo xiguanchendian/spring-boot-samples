@@ -1,26 +1,12 @@
 package com.xgcd.demo.threadPool;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-// 适合使用在多个任务顺序执行的场景。
 public class SingleThreadExecutor {
+
     public static void main(String[] args) {
-        ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
-        for (int i = 0; i < 10; i++) {
-            final int index = i;
-            singleThreadExecutor.execute(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        System.out.println(index + "--单线程执行任务--" + Thread.currentThread().getId());
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-        }
+        System.out.println(Integer.MAX_VALUE);// 2147483647
+
+        final String aaa = "12345";// 被final修饰的字符串变量不能被重新赋值
+        System.out.println(aaa);
 
     }
 }
