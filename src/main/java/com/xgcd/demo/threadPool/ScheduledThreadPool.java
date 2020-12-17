@@ -19,7 +19,8 @@ public class ScheduledThreadPool {
         calendar.set(Calendar.SECOND, 00); // 秒
         //计算现在时间和计划任务执行时间差多久，单位毫秒
         Long date = calendar.getTime().getTime() - System.currentTimeMillis();
-//        //延迟3秒执行
+
+        //延迟3秒执行
         scheduledThreadPool.schedule(new Runnable() {
             @Override
             public void run() {
@@ -35,12 +36,13 @@ public class ScheduledThreadPool {
             }
         }, 5, 2, TimeUnit.SECONDS);
 
-        //定时在某一时刻执行任务，然后间隔执行,如果时间过了会立马执行
-        scheduledThreadPool.scheduleAtFixedRate(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("定时在某一时刻执行任务，然后间隔执行--" + new Date().toLocaleString());
-            }
-        }, date / 1000, 2, TimeUnit.SECONDS);
+//        //定时在某一时刻执行任务，然后间隔执行,如果时间过了会立马执行
+//        scheduledThreadPool.scheduleAtFixedRate(new Runnable() {
+//            @Override
+//            public void run() {
+//                System.out.println("定时在某一时刻执行任务，然后间隔执行--" + new Date().toLocaleString());
+//            }
+//        }, date / 1000, 2, TimeUnit.SECONDS);
+
     }
 }
